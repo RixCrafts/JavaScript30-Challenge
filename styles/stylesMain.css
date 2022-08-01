@@ -15,6 +15,7 @@ body{
 header{
     width: 100%;
     margin-bottom: 80px;
+    background-color: #0d0a28;
 }
 
 #banner{
@@ -37,12 +38,15 @@ header #marquesina{
 main{
     display: flex;
     flex-wrap: wrap;
+    gap: 80px;
+    justify-content: space-around;
+    padding-left: 60px;
 }
 
 main .challenges-container{
     width: 400px;
     height: 500px;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 30px auto;
     border: 5px solid var(--yellow);
     border-radius: 20px;
 }
@@ -93,6 +97,11 @@ ol li:nth-of-type(even){
 ol li:hover{
     border-top: 2px solid rgba(219, 206, 239, 0.5);
     border-bottom: 2px solid rgba(219, 206, 239, 0.5);
+}
+
+ol li a{
+    text-decoration: none;
+    display: block;
 }
 
 ol li span{
@@ -154,4 +163,15 @@ ol li span.done{
 }
 #days_21-30 ol li:last-of-type:hover {
     border-bottom: 0;
+}
+
+
+/* Responsibe Behaviour */
+@media screen and (min-width: 900px) {
+    #banner img{
+        width: 900px;
+        display: block;
+        margin: 0 auto;
+        box-shadow: 0 10px 30px .5px rgba(219, 206, 239, 0.4);
+    }
 }
