@@ -158,9 +158,11 @@ ol li span.done{
 #days_1-10 ol li:last-of-type:hover{
     border-bottom: 0;
 }
+
 #days_11-20 ol li:last-of-type:hover {
     border-bottom: 0;
 }
+
 #days_21-30 ol li:last-of-type:hover {
     border-bottom: 0;
 }
