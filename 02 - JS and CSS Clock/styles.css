@@ -1,0 +1,108 @@
+html {
+     background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+     background-size: cover;
+     font-family: 'helvetica neue';
+     text-align: center;
+     font-size: 10px;
+}
+
+body {
+     margin: 0;
+     font-size: 2rem;
+     /* display: flex;
+     flex: 1; */
+     min-height: 100vh;
+     align-items: center;
+}
+
+.clock {
+     width: 30rem;
+     height: 30rem;
+     border: 20px solid white;
+     border-radius: 50%;
+     margin: 50px auto;
+     position: relative;
+     padding: 2rem;
+     box-shadow:
+          0 0 0 4px rgba(0, 0, 0, 0.1),
+          inset 0 0 0 3px #EFEFEF,
+          inset 0 0 10px black,
+          0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.clock-face {
+     position: relative;
+     width: 100%;
+     height: 100%;
+     transform: translateY(-3px);
+     /* account for the height of the clock hands */
+}
+
+.hand {
+     /* width: 50%; */
+     height: 6px;
+     /* background: black; */
+     position: absolute;
+     top: 50%;
+     /* RixCrafts */
+     transform-origin: 100%;
+     transform: rotateZ(90deg);
+     transition: all 0.5s;
+     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* RixCrafts */
+
+.center {
+     background-color: #1a237e;
+     width: 5%;
+     height: 5%;
+     border-radius: 50%;
+     position: absolute;
+     top: 49%;
+     left: 47.5%;
+     z-index: 100;
+
+}
+
+
+.hour-hand {
+     /* transform: rotateZ(90deg); */
+     width: 30%;
+     left: 20%;
+     background-color: #283593;
+     border-radius: 5px;
+     z-index: 10;
+     box-shadow: 0 0 10px 5px #c5cae9;
+}
+
+.min-hand {
+     width: 40%;
+     left: 10%;
+     background-color: #303f9f;
+     border-radius: 5px;
+     z-index: 20;
+     box-shadow: 0 0 10px 5px #c5cae9;
+}
+
+.second-hand {
+     width: 50%;
+     left: 0%;
+     background-color: #3949ab;
+     border-radius: 5px;
+     z-index: 30;
+     box-shadow: 0 0 10px 5px #c5cae9;
+}
+
+.clock-digital {
+     width: 100%;
+     height: 100px;
+     background-color: rgba(129, 212, 250, .3);
+     box-shadow: 0 0 10px 2px rgba(225, 245, 254, .8);
+}
+
+.clock-digital p{
+     font-size: 80px;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     color: #e1f5fe;
+}
