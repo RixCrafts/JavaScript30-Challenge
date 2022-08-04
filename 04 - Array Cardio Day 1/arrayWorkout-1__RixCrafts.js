@@ -1,4 +1,5 @@
 // ## Array Cardio Day 1
+console.info("Array Cardio Day 1 - JS Loaded");
 
 // Some data we can work with
 
@@ -27,25 +28,77 @@ const people = [
 
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's
+console.log("--------------------------------------");
+console.log(inventors.filter(inventor => inventor.year >= 1500 && inventor.year < 1600));
+console.log("--------------------------------------");
 
 // Array.prototype.map()
 // 2. Give us an array of the inventors first and last names
+console.log("--------------------------------------");
+console.log(inventors.map(inventor => `${inventor.first} ${inventor.last}`));
+console.log("--------------------------------------");
 
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest
+console.log("--------------------------------------");
+inventors.sort((a, b) => a.year - b.year);
+console.log(inventors);
+console.log("--------------------------------------");
 
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live all together?
+console.log("--------------------------------------");
+let yearsLived = inventors.reduce((acc, newVal) => acc + (newVal.passed - newVal.year), 0);
+console.log(yearsLived);
+console.log("--------------------------------------");
 
 // 5. Sort the inventors by years lived
+console.log("--------------------------------------");
+inventors.sort((a, b) => (a.passed - a.year) - (b.passed - b.year));
+console.log(inventors);
+console.log("--------------------------------------");
 
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-
+// console.log("--------------------------------------");
+// let items = [...document.querySelectorAll(".mw-category a")];
+// let result = items
+//     .filter((item) => item.textContent.includes("de"))
+//     .map((item) => item.textContent);
+// console.log("--------------------------------------");
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
+console.log("--------------------------------------");
+people.sort((personA, personB) => personA < personB ? -1 : 1);
+console.table(people);
+console.log("--------------------------------------");
+
+//7.1
+// Present the list in a table with first name first
+console.log("--------------------------------------");
+let peopleMap = people.map(person => `${person.split(", ")[1]}, ${person.split(", ")[0]}`);
+console.table(peopleMap);
+console.log("--------------------------------------");
+
+//7.2 sort Exercise
+// Sort the people alphabetically by first name
+console.log("--------------------------------------");
+peopleMap.sort((a, b) =>  a < b ? -1 : 1);
+console.table(peopleMap);
+console.log("--------------------------------------");
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+
+console.log("--------------------------------------");
+let count = data.reduce((acc, item) => {
+    if(!acc[item]){
+        acc[item] = 0;
+    }
+    acc[item]++;
+    return acc;
+}, {});
+console.log(count);
+console.log("--------------------------------------");
